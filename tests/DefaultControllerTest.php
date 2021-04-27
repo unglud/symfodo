@@ -19,4 +19,20 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->click($link);
         $this->assertStringContainsString('This is login', $client->getResponse()->getContent());
     }
+
+
+    /**
+     * @dataProvider provideUrls
+     */
+    public function testDataProviders($url)
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', $url);
+        $this->assertResponseIsSuccessful();
+    }
+
+    public function provideUrls()
+    {
+        return [['/', '/login']];
+    }
 }
