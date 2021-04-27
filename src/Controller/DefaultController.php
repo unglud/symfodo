@@ -28,12 +28,9 @@ class DefaultController extends AbstractController
         $response->headers->setCookie($cookie);
 
         $session->set('name','session value');
-        exit($request->query->get('page', 'default'));
 
         return $this->render("default/index.html.twig", [
             "controller_name" => "DefaultController",
-            "users"           => $users,
-            "random_gift"     => $gifts->gifts,
         ], $response);
     }
 
