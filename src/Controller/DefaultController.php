@@ -61,4 +61,10 @@ class DefaultController extends AbstractController
     {
         $path = $this->getParameter('download_directory');
     }
+
+    #[Route('/login', name: 'login')]
+    public function login()
+    {
+        return new Response("This is login");
+    }
 }

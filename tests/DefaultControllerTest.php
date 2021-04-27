@@ -13,5 +13,10 @@ class DefaultControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'DefaultController');
+
+        $link = $crawler->filter('a:contains("awesome link")')->link();
+
+        $crawler = $client->click($link);
+        $this->assertStringContainsString('This is login', $client->getResponse()->getContent());
     }
 }
