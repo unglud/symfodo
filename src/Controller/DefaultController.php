@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Services\GiftService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,15 +14,13 @@ class DefaultController extends AbstractController
     /**
      * DefaultController constructor.
      */
-    public function __construct($logger) { }
+    public function __construct() { }
 
     #[Route('/', name: 'default')]
     public function index(
-        GiftService $gifts, Request $request, SessionInterface $session
+        Request $request, SessionInterface $session
     ): Response {
-        $users = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->findAll();
+
 
         $cookie = new Cookie('my_cookie', 'cookie vsalue', time() + 9000);
 
