@@ -17,7 +17,7 @@ class DefaultController extends AbstractController
      */
     public function __construct() { }
 
-    #[Route('/', name: 'default')]
+    #[Route('/default', name: 'default')]
     public function index(
         Request $request, SessionInterface $session, TranslatorInterface $translator
     ): Response {
