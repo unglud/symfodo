@@ -31,7 +31,7 @@
         </ul>
 
         <a href="{{ path('login') }}">
-            {{ 'link.key'|trans }}
+            {{ 'link.key'|trans({'count':count}) }}
         </a>
     </div>
 {% endblock %}

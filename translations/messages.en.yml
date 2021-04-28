@@ -1,2 +1,6 @@
 link:
-  key: super linker
+  key: "{count, plural,
+        =0 {super linker}
+        one {super linkers}
+        other {super-duper linkers}
+      }"
