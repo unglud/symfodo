@@ -16,4 +16,23 @@ class ToDoListController extends AbstractController
             'controller_name' => 'ToDoListController',
         ]);
     }
+
+    #[Route('/create', name: 'create_task', methods: ['POST'])]
+    public function create(): Response
+    {
+        exit('todo: create new task');
+    }
+
+
+    #[Route('/switch-status/{id}', name: 'switch_status')]
+    public function switchStatus($id): Response
+    {
+        exit('todo: switch-status task'. $id);
+    }
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete($id): Response
+    {
+        exit('todo: delete task'. $id);
+    }
 }
