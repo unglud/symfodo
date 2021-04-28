@@ -36,3 +36,4 @@ class DefaultControllerTest extends WebTestCase
         return [['/', '/login']];
     }
 }
+
